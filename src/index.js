@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { UserContextProvider } from './context/userContext';
+import { JobContextProvider } from './context/jobContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <UserContextProvider>
+    <JobContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </JobContextProvider>
+  </UserContextProvider>,
   document.getElementById('root')
 );
 
